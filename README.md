@@ -85,11 +85,11 @@ You can extend this asset by adding your own custom design parameters and GameOb
 
 ### Irrespective of LoA 
 
-See `ProactiveSymbolTrigger.cs` *(Scripts/Proactivity/ProactiveTriggers)* for an example of a design element with fixed behaviour, irrespective of current LoA. This script modifies interior symbol transparency based on the colorA design parameter value.
+See `ProactiveSymbolTriggerDemo.cs` *(Scripts/Proactivity/ProactiveTriggers)* for an example of a design element with fixed behaviour, irrespective of current LoA. This script modifies interior symbol transparency based on the colorA design parameter value.
 
 ### Dependent on LoA (i.e. each LoA might produce a different output)
 
-See `ProactiveVoiceTrigger.cs` *(Scripts/Proactivity/ProactiveTriggers)* for an example of a design element with variation between each LoA by implementing switch cases. This is useful if you want to define different outputs depending on the current assigned level.
+See `ProactiveVoiceTriggerDemo.cs` *(Scripts/Proactivity/ProactiveTriggers)* for an example of a design element with variation between each LoA by implementing switch cases. This is useful if you want to define different outputs depending on the current assigned level.
 
 ## Example Demo
 This section explains the asset with a step-by-step walkthrough of the demo scene. This assumes that you have opened the demo scene **ProactiveInterventionDemo**, and have set python settings accordingly.
