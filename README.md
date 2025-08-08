@@ -60,7 +60,10 @@ The class includes:
 ## Porting to your own Project
 This section outlines the steps for exporting the asset into your own Unity project. An installation video is included for a visual walkthrough of the steps.
 
-https://github.com/user-attachments/assets/40d69505-19bf-456f-a9d2-437175d0bd6e
+
+
+https://github.com/user-attachments/assets/e92da1c8-5e3a-4000-8aae-2c73f7201b8e
+
 
 ### Converting to Package
 1. Select Assets -> Export package.
