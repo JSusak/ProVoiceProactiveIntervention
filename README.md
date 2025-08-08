@@ -64,13 +64,17 @@ This section outlines the steps for exporting the asset into your own Unity proj
 
 ### Converting to Package
 1. Select Assets -> Export package.
-2. Uncheck all folders by selecting `None`, then select folders X, Y and Z.
+2. Add all folders to the package by selecting `All`.
 3. Click `Export...` and save the Unity package onto your computer.
 
 ### Importing to New Project
 1. Create or open the second project which you want to import the package into.
 2. Select Assets -> Import Package -> Custom Package. Locate the created Unity package. 
-3. Make sure everything is selected, and click `Import...`.
+3. Make sure everything is selected by selecting `All`, and click `Import...`.
+4. Install `XR Interaction Toolkit` and `XR Hands` from the Unity registry. In `XR Hands`, install `Gestures` and `HandVisualizer`.
+5. In Project Settings (Edit -> Project Settings), open Input Manager and add the `Acceleration` and `Brake` input axes to add player movement, as pictured below.
+6. *(Optional)* Open the IVI and Cluster scenes in UnityTechnologies -> HMITemplate -> Scenes. Once opened, go into File -> Build Profile and add them to the scene list.
+7. Click play to begin the demo scene.
 
 ## Adding Custom Intervention Design
 You can extend this asset by adding your own custom design parameters and GameObjects to model proactive IVCA intervention design using MOBO.
