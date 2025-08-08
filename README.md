@@ -58,9 +58,9 @@ The class includes:
 - `proactiveListenDuration`: How long the proactive IVCA should stay active and observe for user intervention.
 
 ## Porting to your own Project
-This section outlines the steps for exporting the asset into your own Unity project. An installation walkthrough video is included.
+This section outlines the steps for exporting the asset into your own Unity project. An installation video is included for a visual walkthrough of the steps.
 
-**TODO: Put Installation Video**
+https://github.com/user-attachments/assets/40d69505-19bf-456f-a9d2-437175d0bd6e
 
 ### Converting to Package
 1. Select Assets -> Export package.
@@ -70,13 +70,30 @@ This section outlines the steps for exporting the asset into your own Unity proj
 ### Importing to New Project
 1. Create or open the second project which you want to import the package into.
 2. Select Assets -> Import Package -> Custom Package. Locate the created Unity package. 
-3. Make sure everything is selected by selecting `All`, and click `Import...`.
+3. Make sure everything is selected by selecting `All`, and click `Import`.
 4. Install `XR Interaction Toolkit` and `XR Hands` from the Unity registry. In `XR Hands`, install `Gestures` and `HandVisualizer`.
-5. In Project Settings (Edit -> Project Settings), open Input Manager and add the `Acceleration` and `Brake` input axes to add player movement, as pictured below.
+5. In Project Settings (Edit -> Project Settings), open Input Manager and add the `Acceleration` and `Brake` input axes to allow player movement, as pictured below.
 ![Screenshot](accelpic.PNG)
 ![Screenshot](brakepic.PNG)
 6. *(Optional)* Open the IVI and Cluster scenes in UnityTechnologies -> HMITemplate -> Scenes. Once opened, go into File -> Build Profile and add them to the scene list.
-7. Click play to begin the demo scene.
+7. Return to the ProactiveInterventionDemo scene and press the play button (⏵) at the top centre of the screen.
+
+## Example Demo
+This section explains the asset with a step-by-step walkthrough of the demo scene. This assumes that you have opened the demo scene **ProactiveInterventionDemo**, and have set python settings in **BOforUnityManager** GameObject accordingly.
+Alternatively, a video demonstration is included in the installation video (see [Importing to New Project](#importing-to-new-project)).
+
+While designed to be used with a compatible Virtual Reality (VR) headset with OpenXR and driving apparatus, the demo scene is fully functional with a desktop display and controls including keyboard, mouse or gaming controller.
+
+1. Press the play button (⏵) at the top centre of the screen.
+2. Switch to the game view.
+3. You will be greeted with a short introduction screen. Press the 'Begin' button to start.
+4. After loading, press the 'Next' button to proceed.
+5. You will be located within the vehicle's driving interior. Press the respective forward button on your controls to begin moving the vehicle. *If no VR HMD is connected, the camera will remain in a static position.*
+6. After driving forward, the vehicle will enter the sphere collider and activate proactive intervention. See [How does proactive intervention occur?](#how-does-proactive-intervention-occur?) for further details on the implementation.
+7. After reaching the goal collider, marked in yellow, a questionnaire will appear, covering the driver's dashboard. Use a VR controller, or computer mouse, to answer the corresponding questions.
+8. Click 'Next' to begin a new iteration. The new iteration will begin automatically.
+
+*Iterations can be terminated early, through the 'End Simulation' button to trigger the questionnaire, or 'Restart Iteration' to reload the iteration from the beginning.*
 
 ## Adding Custom Intervention Design
 You can extend this asset by adding your own custom design parameters and GameObjects to model proactive IVCA intervention design using MOBO.
@@ -96,23 +113,6 @@ See `ProactiveSymbolTriggerDemo.cs` *(Scripts/Proactivity/ProactiveTriggers)* fo
 ### Dependent on LoA (i.e. each LoA might produce a different output)
 
 See `ProactiveVoiceTriggerDemo.cs` *(Scripts/Proactivity/ProactiveTriggers)* for an example of a design element with variation between each LoA by implementing switch cases. This is useful if you want to define different outputs depending on the current assigned level.
-
-## Example Demo
-This section explains the asset with a step-by-step walkthrough of the demo scene. This assumes that you have opened the demo scene **ProactiveInterventionDemo**, and have set python settings accordingly.
-
-While designed to be used with a compatible Virtual Reality (VR) headset with OpenXR and driving apparatus, the demo scene is fully functional with a desktop display and controls including keyboard, mouse or gaming controller.
-
-1. Press the play button (⏵) at the top centre of the screen.
-2. Switch to the game view.
-3. You will be greeted with a short introduction screen. Press the 'Begin' button to start.
-4. After loading, press the 'Next' button to proceed.
-5. You will be located within the vehicle's driving interior. Press the respective forward button on your controls to begin moving the vehicle. *If no VR HMD is connected, the camera will remain in a static position.*
-6. After driving forward, the vehicle will enter the sphere collider and activate proactive intervention. See [How does proactive intervention occur?](#how-does-proactive-intervention-occur?) for further details on the implementation.
-7. After reaching the goal collider, marked in yellow, a questionnaire will appear, covering the driver's dashboard. Use a VR controller, or computer mouse, to answer the corresponding questions.
-8. Click 'Next' to begin a new iteration. The new iteration will begin automatically.
-
-*Iterations can be terminated early, through the 'End Simulation' button to trigger the questionnaire, or 'Restart Iteration' to reload the iteration from the beginning.*
-
 
 ## Dissertation Demo Video
 
