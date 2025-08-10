@@ -124,10 +124,10 @@ The video below demonstrates the asset being used in ProVoice - a VR driving sim
 
 [![Watch the video](https://img.youtube.com/vi/lpYsL_CiAlc/0.jpg)](https://youtu.be/lpYsL_CiAlc)
 
-For full access to this scene, feel free to get in touch with the researcher, Josh Susak.
+For full access to this scene, feel free to get in touch with the researcher, KVVZ2.
 
 ## Contributions
-Further contributions are always welcome! Feel free to get in touch with the researcher, Josh Susak. Alternatively, you can:
+Further contributions are always welcome! Feel free to get in touch with the researcher, KVVZ2. Alternatively, you can:
 
   - Open issues for bugs or feature requests.
   - Submit pull requests to improve the code.
