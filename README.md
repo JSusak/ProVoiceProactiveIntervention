@@ -3,6 +3,7 @@
 
 ## About
 
+
 This Unity asset extends on Pascal Jansen's and Mark Colley's [Bayesian Optimization for Unity](https://github.com/Pascal-Jansen/Bayesian-Optimization-for-Unity) and Unity's [Automotive Human-Machine Interaction Template](https://assetstore.unity.com/packages/templates/automotive-hmi-template-201095), enabling optimization of design parameters for modelling proactive In-Vehicle Conversational Assistant (IVCA) intervention. It advocates a Human-In-The-Loop (HITL) approach, exploring design parameter values based on iterative user feedback (see [QuestionnaireToolkit](https://assetstore.unity.com/packages/tools/gui/questionnairetoolkit-157330)) to maximise/minimise a set of high-level design objectives and find the parameter value sets which lie on the pareto front.
 
 This asset is implemented as part of a MSc Human-Computer Interaction dissertation project, titled: *"Designing Proactive Functionality for In-Vehicle Conversational Assistants using Multi-Objective Bayesian Optimization to Enhance Driver Experience"* by Josh Susak. A video demonstration of ProVoice is found in [Dissertation Demo Video](#dissertation-demo-video). The full dissertation paper is available upon request.
@@ -107,7 +108,7 @@ You can extend this asset by adding your own custom design parameters and GameOb
 
 3. Create a collider of your choice (sphere recommended). In this collider, set isTrigger to true, set radius to your preference and place on the scene at a desired point in the driving journey.
 
-4. Create a new monoscript in *Assets/Script/Proactivity/InterventionTriggers*. Attach this script to the newly created collider. Change the superclass from MonoBehaviour to ProactiveTrigger and add skeleton functions for abstract methods `TriggerIntervention` and `OnInterventionEnd`. Add a 
+4. Create a new monoscript in *Assets/Script/Proactivity/InterventionTriggers*. Attach this script to the newly created collider. Change the superclass from MonoBehaviour to ProactiveTrigger and add skeleton functions for abstract methods `TriggerIntervention` and `OnInterventionEnd`.
 
 ### Irrespective of LoA 
 
@@ -119,9 +120,9 @@ See `ProactiveVoiceTriggerDemo.cs` *(Scripts/Proactivity/ProactiveTriggers)* for
 
 ## Dissertation Demo Video
 
-The video below demonstrates the asset being used in ProVoice - a VR driving simulator designed in part fulfillment for a MSc Human-Computer Interaction dissertation project at UCL.
+The video below demonstrates the asset being used in ProVoice - a VR driving simulator designed in part fulfillment for a MSc Human-Computer Interaction dissertation project at UCL. Click the thumbnail to watch the demonstration.
 
-**TODO: Put Prototype Video**
+[![Watch the video](https://img.youtube.com/vi/lpYsL_CiAlc/0.jpg)](https://youtu.be/lpYsL_CiAlc)
 
 For full access to this scene, feel free to get in touch with the researcher, Josh Susak.
 
