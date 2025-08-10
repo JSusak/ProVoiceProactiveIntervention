@@ -4,21 +4,16 @@ using UnityEngine;
 public class ProactiveAlertTriggerDemo : ProactiveTrigger
 {
     public AudioClip voiceNote;
-
-
     public AudioSource audioSource;
-
 
     void Start()
     {
-
-             exposer = GameObject
-            .Find("BODesignParameterValues").GetComponent<ObjectVariableExposer>();
+        exposer = GameObject.Find("BODesignParameterValues").GetComponent<ObjectVariableExposer>();
     }
 
     public override void TriggerIntervention()
     {
-        Debug.Log("Player Rigidbody entered the trigger!");
+        //Adjust alert volume according to alertVolume parameter value in ObjectVariableExposer.
         audioSource.volume = Mathf.Clamp01(exposer.alertVolume);
         audioSource.PlayOneShot(voiceNote);
         hasPlayed = true;

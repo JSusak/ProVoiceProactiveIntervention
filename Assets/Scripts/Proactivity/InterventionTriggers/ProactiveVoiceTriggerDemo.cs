@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-//https://www.youtube.com/watch?v=HwT6QyOA80E
+//Voice detection from https://www.youtube.com/watch?v=HwT6QyOA80E
 public class ProactiveVoiceTriggerDemo: ProactiveTrigger
 {
 
+    //Store reference to all assistant voice clips per LoA
     public AudioSource audioNote;
-
     private AudioClip levelZeroClip;
     private AudioClip levelOneClip;
     private AudioClip levelTwoClip;
@@ -25,33 +25,19 @@ public class ProactiveVoiceTriggerDemo: ProactiveTrigger
     private int levelOfAutonomy;
 
 
-void Awake()
-{
-    levelZeroClip = Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveLevel0");
-    levelOneClip = Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveLevel1");
-    levelTwoClip = Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveLevel2");
-    levelThreeClip = Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveLevel3");
-    levelFourClip = Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveLevel4");
-}
-
-
+    void Awake()
+    {
+        levelZeroClip = Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveLevel0");
+        levelOneClip = Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveLevel1");
+        levelTwoClip = Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveLevel2");
+        levelThreeClip = Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveLevel3");
+        levelFourClip = Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveLevel4");
+    }
 
     void Start()
     {
-            if (Microphone.devices.Length == 0)
-    {
-        Debug.LogError("No microphone detected!");
-    }
-    else
-    {
-        foreach (var device in Microphone.devices)
-        {
-            Debug.Log("Microphone found: " + device);
-        }
-    }
 
-        exposer = GameObject
-            .Find("BODesignParameterValues").GetComponent<ObjectVariableExposer>();
+        exposer = GameObject.Find("BODesignParameterValues").GetComponent<ObjectVariableExposer>();
 
         keywords.Add("yes", () => { OnKeywordRecognized("yes"); });
         keywords.Add("yeah", () => { OnKeywordRecognized("yes"); });
@@ -65,10 +51,9 @@ void Awake()
         keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizerOnPhraseRecognized;
 
-
     }
 
-        void KeywordRecognizerOnPhraseRecognized(PhraseRecognizedEventArgs args)
+    void KeywordRecognizerOnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
         System.Action keywordAction;
 
@@ -84,23 +69,22 @@ void Awake()
         keywordRecognizer.Start();
 
         //Example of changing a design parameter with nuanced adjustment for each LoA.
-        //Condition 1: LoA is defined in ProactiveSettings.cs - Use ProactiveSettings.level across each
+
+        //Condition 1 (Trained): LoA is NOT defined in ProactiveSettings.cs, uses levelOfAutonomy parameter defined
+        //in BOForUnityManager.
+        //Condition 2 (Fixed): LoA is defined in ProactiveSettings.cs - Use ProactiveSettings.level across each
         //iteration.
         levelOfAutonomy = ProactiveSettings.level;
 
-
-        //Condition 2: LoA is NOT defined in ProactiveSettings.cs - Use levelOfAutonomy design parameter obtained
-        //during BO and adjust between each iteration dynamically.
+        //Check if in study condition 1 or condition 2.
         if (levelOfAutonomy == -1)
         {
-            //Normalise parameter value into range 0-4 
+            //Normalise LoA parameter value into integer between 0-4.
             float boLevelOfAutonomy = exposer.levelOfAutonomy;
             levelOfAutonomy = Mathf.FloorToInt(boLevelOfAutonomy * 5f);
             levelOfAutonomy = Mathf.Clamp(levelOfAutonomy, 0, 4);
         }
 
-        //Trigger event accordingly, based on LoA.
-        //Perform any extra events during intervention if desired.
         switch (levelOfAutonomy)
         {
             case 0:
@@ -113,20 +97,18 @@ void Awake()
                 audioNote.PlayOneShot(levelTwoClip);
                 break;
             case 3:
-         
                 audioNote.PlayOneShot(levelThreeClip);
                 break;
             case 4:
-       
                 audioNote.PlayOneShot(levelFourClip);
                 break;
             default:
-                Debug.LogWarning($"No audio defined for proactivity level: {ProactiveSettings.level}");
+                Debug.LogWarning($"No audio defined for LoA {ProactiveSettings.level}");
                 break;
         }
     }
 
-        public void OnKeywordRecognized(string keyword)
+    public void OnKeywordRecognized(string keyword)
     {
         if (voiceIntervened) return;
         voiceIntervened = true;
@@ -150,33 +132,24 @@ void Awake()
         }
     }
     
-
-    //For level 2 - Okay, i have found .......
     private void OnPlayerConfirmed()
     {
-        Debug.Log("User confirmed with YES");
-        // Implement what YES should trigger (e.g., accept suggestion, start nav, etc.)
-        //play suggestion and turn on the satnav
         if (levelOfAutonomy == 2)
         {
             audioNote.PlayOneShot(Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveLevel2Yes"));
-    
+
         }
         OnPlayerIntervention();
     }
 
-    //voice command same in every level - "Okay, I have cancelled the search".
-    //Proactive level 4 - "I can't cancel the search?"
     private void OnPlayerDeclined()
     {
-        Debug.Log("User declined with NO");
         audioNote.PlayOneShot(Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveAlertCancel"));
         OnPlayerIntervention(); 
     }
 
-        private void OnPlayerSearched()
+    private void OnPlayerSearched()
     {
-        Debug.Log("User confirmed with SEARCH");
         if (levelOfAutonomy == 1)
         {
             audioNote.PlayOneShot(Resources.Load<AudioClip>("VoiceNotes/ProactiveIntervention/proactiveLevel1Search"));

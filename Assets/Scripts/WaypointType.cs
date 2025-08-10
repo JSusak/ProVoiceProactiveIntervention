@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 //Waypoint type used to record player location within the environment.
 public enum WaypointType

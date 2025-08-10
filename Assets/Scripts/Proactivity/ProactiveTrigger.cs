@@ -3,17 +3,15 @@ using BOforUnity.Examples;
 using System.Collections;
 
 /*
-    Abstract class containing core logic for proactive intervention and behaviour for:
+    Abstract class contains all core logic for proactive IVCA intervention. Implements functions for:
     - triggering proactive intervention on collider enter.
     - Listening to user response and checking if user has intervened.
-    - Ending intervention after period of time.
+    - Ending intervention after grace period, defined in ProactiveSettings.cs
 */
 public abstract class ProactiveTrigger : MonoBehaviour
 {
     public ObjectVariableExposer exposer;
     public bool hasPlayed = false;
-
-
     private IEnumerator listenCoroutine;
     private bool intervened = false;
 
@@ -23,7 +21,7 @@ public abstract class ProactiveTrigger : MonoBehaviour
 
         Rigidbody rb = other.attachedRigidbody;
 
-        //Once player is registered in the collider, trigger proactive intervention and begin input listening period.
+        //Once player is registered in the collider, trigger proactive intervention and begin player input listening period.
         if (rb != null && rb.gameObject.CompareTag("Player"))
         {
             TriggerIntervention();
@@ -36,7 +34,7 @@ public abstract class ProactiveTrigger : MonoBehaviour
     }
 
 
-    //Wait for a period of time (ProactiveSettings.cs) to check if user has interveneted. If not, end the intervention.
+    //Wait for a grace period (ProactiveSettings.cs) to check if player has interveneted. If not, end the intervention.
     private IEnumerator WaitForIntervention(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);

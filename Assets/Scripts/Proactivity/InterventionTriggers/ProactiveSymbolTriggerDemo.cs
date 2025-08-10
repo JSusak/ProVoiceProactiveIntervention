@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class ProactiveSymbolTriggerDemo : ProactiveTrigger
 {
+
+    //Store reference to the GameObject to represent interior intervention symbol.
     public GameObject interiorSymbol;
 
     void Start()
     {
-             exposer = GameObject
-            .Find("BODesignParameterValues").GetComponent<ObjectVariableExposer>();
+        exposer = GameObject.Find("BODesignParameterValues").GetComponent<ObjectVariableExposer>();
         interiorSymbol.SetActive(false);
     }
 
@@ -23,21 +24,21 @@ public class ProactiveSymbolTriggerDemo : ProactiveTrigger
 
     public override void OnPlayerIntervention()
     {
-        Debug.Log("Player has intervened with the proactive assistant for level " + ProactiveSettings.level);
+       
     }
 
     public override void OnInterventionEnd()
     {
-         Renderer rend = interiorSymbol.GetComponent<Renderer>();
+        Renderer rend = interiorSymbol.GetComponent<Renderer>();
 
-    if (rend != null && rend.material.HasProperty("_Color"))
-    {
-        Color currentColor = rend.material.color;
-        currentColor.a = 0f;  // fully transparent
-        rend.material.color = currentColor;
-    }
+        if (rend != null && rend.material.HasProperty("_Color"))
+        {
+            Color currentColor = rend.material.color;
+            currentColor.a = 0f;
+            rend.material.color = currentColor;
+        }
 
-    // Optionally deactivate GameObject as well if needed
-    interiorSymbol.SetActive(false);
+        interiorSymbol.SetActive(false);
+    
     }
 }

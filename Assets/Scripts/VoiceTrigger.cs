@@ -3,8 +3,7 @@ using UnityEngine;
 public class VoiceTrigger : MonoBehaviour
 {
     public AudioSource audioNote;
-
-     public AudioClip voiceClip;
+    public AudioClip voiceClip;
     private bool hasPlayed = false;
 
 
@@ -18,15 +17,15 @@ public class VoiceTrigger : MonoBehaviour
     {
         if (hasPlayed) return;
 
-     Rigidbody rb = other.attachedRigidbody;
+        Rigidbody rb = other.attachedRigidbody;
 
-    if (rb != null && rb.gameObject.CompareTag("Player"))
-    {
-        Debug.Log("Player Rigidbody entered the trigger!");
-      
+        if (rb != null && rb.gameObject.CompareTag("Player"))
+        {
+
             audioNote.volume = 1;
-              audioNote.PlayOneShot(voiceClip);
+            audioNote.PlayOneShot(voiceClip);
             hasPlayed = true;
-    }
+            
+        }
     }
 }
