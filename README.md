@@ -145,3 +145,5 @@ This project also acknowledges use of the following assets, created by other tal
 - [Gley Urban & Pedestrian System](https://gleygames.com/urban-system/)
 - [Automotive HMI Template](https://assetstore.unity.com/packages/templates/automotive-hmi-template-201095?srsltid=AfmBOorrhkZKnRy9vmo-8Ynvgfh3SHoynqYk0Mq6hKrqbAb34urZlisn)
 - [Human Character Dummy](https://assetstore.unity.com/packages/3d/characters/humanoids/humans/human-character-dummy-178395?srsltid=AfmBOooc_nppF_FQzacqvBeD4EjNlNYed0lt7VxZmjiSzrIZuvoyUaXX)
+
+*I acknowledge the use of ChatGPT (GPT-4o, OpenAI, https://chatgpt.com/) for assisting with structuring and refactoring code for ProVoice and searching up Unity issues.*
