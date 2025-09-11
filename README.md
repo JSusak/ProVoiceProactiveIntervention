@@ -133,9 +133,7 @@ Further contributions are always welcome! Feel free to get in touch with the res
 
 ## Acknowledgements
 
-Many thanks to [Mark Colley](https://github.com/M-Colley) for being a great project supervisor and helping with any concerns, technical or otherwise.
-
-This project also acknowledges use of the following assets, created by other talented developers:
+This project acknowledges use of the following assets, created by other very talented developers:
 
 - [Bayesian Optimization for Unity](https://github.com/Pascal-Jansen/Bayesian-Optimization-for-Unity)
 - [QuestionnaireToolkit](https://assetstore.unity.com/packages/tools/gui/questionnairetoolkit-157330)
