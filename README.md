@@ -122,7 +122,7 @@ The video below demonstrates the asset being used in ProVoice. Click the thumbna
 
 [![Watch the video](https://img.youtube.com/vi/lpYsL_CiAlc/0.jpg)](https://youtu.be/lpYsL_CiAlc)
 
-For full access to this scene, feel free to get in touch with the researcher, KVVZ2.
+For full access to this scene, feel free to get in touch with the researcher.
 
 ## Contributions
 Further contributions are always welcome! Feel free to get in touch with the researcher. Alternatively, you can:
