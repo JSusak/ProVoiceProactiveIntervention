@@ -6,7 +6,7 @@
 
 This Unity asset extends on Pascal Jansen's and Mark Colley's [Bayesian Optimization for Unity](https://github.com/Pascal-Jansen/Bayesian-Optimization-for-Unity) and Unity's [Automotive Human-Machine Interaction Template](https://assetstore.unity.com/packages/templates/automotive-hmi-template-201095), enabling optimization of design parameters for modelling proactive In-Vehicle Conversational Assistant (IVCA) intervention. It advocates a Human-In-The-Loop (HITL) approach, exploring design parameter values based on iterative user feedback (see [QuestionnaireToolkit](https://assetstore.unity.com/packages/tools/gui/questionnairetoolkit-157330)) to maximise/minimise a set of high-level design objectives and find the parameter value sets which lie on the pareto front.
 
-This asset is implemented as part of a MSc Human-Computer Interaction dissertation project, titled: *"Designing Proactive Functionality for In-Vehicle Conversational Assistants using Multi-Objective Bayesian Optimization to Enhance Driver Experience"*.
+This asset is implemented as part of a research project, titled: *"Designing Proactive Functionality for In-Vehicle Conversational Assistants using Multi-Objective Bayesian Optimization to Enhance Driver Experience"*.
 
 ## Installation
 To set up the asset on your system, please follow these steps:
