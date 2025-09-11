@@ -6,7 +6,7 @@
 
 This Unity asset extends on Pascal Jansen's and Mark Colley's [Bayesian Optimization for Unity](https://github.com/Pascal-Jansen/Bayesian-Optimization-for-Unity) and Unity's [Automotive Human-Machine Interaction Template](https://assetstore.unity.com/packages/templates/automotive-hmi-template-201095), enabling optimization of design parameters for modelling proactive In-Vehicle Conversational Assistant (IVCA) intervention. It advocates a Human-In-The-Loop (HITL) approach, exploring design parameter values based on iterative user feedback (see [QuestionnaireToolkit](https://assetstore.unity.com/packages/tools/gui/questionnairetoolkit-157330)) to maximise/minimise a set of high-level design objectives and find the parameter value sets which lie on the pareto front.
 
-This asset is implemented as part of a MSc Human-Computer Interaction dissertation project, titled: *"Designing Proactive Functionality for In-Vehicle Conversational Assistants using Multi-Objective Bayesian Optimization to Enhance Driver Experience"* by KVVZ2. A video demonstration of ProVoice is found in [Dissertation Demo Video](#dissertation-demo-video). The full dissertation paper is available upon request.
+This asset is implemented as part of a MSc Human-Computer Interaction dissertation project, titled: *"Designing Proactive Functionality for In-Vehicle Conversational Assistants using Multi-Objective Bayesian Optimization to Enhance Driver Experience"*.
 
 ## Installation
 To set up the asset on your system, please follow these steps:
@@ -59,8 +59,7 @@ The class includes:
 - `proactiveListenDuration`: How long the proactive IVCA should stay active and observe for user intervention.
 
 ## Porting to your own Project
-This section outlines the steps for exporting the asset into your own Unity project. An installation video is included for a visual walkthrough of the steps.
-
+This section outlines the steps for exporting the asset into your own Unity project.
 
 
 https://github.com/user-attachments/assets/e92da1c8-5e3a-4000-8aae-2c73f7201b8e
@@ -84,7 +83,6 @@ https://github.com/user-attachments/assets/e92da1c8-5e3a-4000-8aae-2c73f7201b8e
 
 ## Example Demo
 This section explains the asset with a step-by-step walkthrough of the demo scene. This assumes that you have opened the demo scene **ProactiveInterventionDemo**, and have set python settings in **BOforUnityManager** GameObject accordingly.
-Alternatively, a video demonstration is included in the installation video (see [Importing to New Project](#importing-to-new-project)).
 
 While designed to be used with a compatible Virtual Reality (VR) headset with OpenXR and driving apparatus, the demo scene is fully functional with a desktop display and controls including keyboard, mouse or gaming controller.
 
@@ -118,16 +116,16 @@ See `ProactiveSymbolTriggerDemo.cs` *(Scripts/Proactivity/ProactiveTriggers)* fo
 
 See `ProactiveVoiceTriggerDemo.cs` *(Scripts/Proactivity/ProactiveTriggers)* for an example of a design element with variation between each LoA by implementing switch cases. This is useful if you want to define different outputs depending on the current assigned level.
 
-## Dissertation Demo Video
+## ProVoice Demonstration Video
 
-The video below demonstrates the asset being used in ProVoice - a VR driving simulator designed in part fulfillment for a MSc Human-Computer Interaction dissertation project at UCL. Click the thumbnail to watch the demonstration.
+The video below demonstrates the asset being used in ProVoice. Click the thumbnail to watch the demonstration.
 
 [![Watch the video](https://img.youtube.com/vi/lpYsL_CiAlc/0.jpg)](https://youtu.be/lpYsL_CiAlc)
 
 For full access to this scene, feel free to get in touch with the researcher, KVVZ2.
 
 ## Contributions
-Further contributions are always welcome! Feel free to get in touch with the researcher, KVVZ2. Alternatively, you can:
+Further contributions are always welcome! Feel free to get in touch with the researcher. Alternatively, you can:
 
   - Open issues for bugs or feature requests.
   - Submit pull requests to improve the code.
@@ -146,4 +144,4 @@ This project also acknowledges use of the following assets, created by other tal
 - [Automotive HMI Template](https://assetstore.unity.com/packages/templates/automotive-hmi-template-201095?srsltid=AfmBOorrhkZKnRy9vmo-8Ynvgfh3SHoynqYk0Mq6hKrqbAb34urZlisn)
 - [Human Character Dummy](https://assetstore.unity.com/packages/3d/characters/humanoids/humans/human-character-dummy-178395?srsltid=AfmBOooc_nppF_FQzacqvBeD4EjNlNYed0lt7VxZmjiSzrIZuvoyUaXX)
 
-*I acknowledge the use of ChatGPT (GPT-4o, OpenAI, https://chatgpt.com/) for assisting with structuring and refactoring code for ProVoice and searching up Unity issues.*
+*I acknowledge the use of ChatGPT (GPT-4o, OpenAI, https://chatgpt.com/) for assisting with structuring and refactoring C# code for ProVoice and searching up Unity issues.*
