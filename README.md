@@ -120,7 +120,7 @@ See `ProactiveVoiceTriggerDemo.cs` *(Scripts/Proactivity/ProactiveTriggers)* for
 
 The video below demonstrates the asset being used in ProVoice. Click the thumbnail to watch the demonstration.
 
-[![Watch the video](https://img.youtube.com/vi/lpYsL_CiAlc/0.jpg)](https://youtu.be/lpYsL_CiAlc)
+[![Watch the video](https://img.youtube.com/vi/QydiCA6svfM/0.jpg)](https://youtu.be/QydiCA6svfM)
 
 For full access to this scene, feel free to get in touch with the researcher.
 
